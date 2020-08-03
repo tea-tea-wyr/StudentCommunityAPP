@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">StudentCommunityApp</string>
+    <string name="app_name">微学</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_course">Course</string>
+    <string name="title_user">User</string>
+    <string name="title_publish">Publish</string>
 </resources>
