@@ -13,3 +13,26 @@ This is a new app about student community.
 > 8. 视频播放
 > 9. 音频播放
 > 10. 其他扩展功能
+
+## UI设计
+
+https://modao.cc/app/3d2790b07db8a63a7407720589a96e152598c4e9?simulator_type=device&sticky
+
+## 环境配置
+
+> 1. nodejs （后端）
+> 2. Express 框架 （后端）
+> 3. Ubuntu服务器 （后端）
+> 4. Mysql （后端）
+> 5. Vscode （后端）
+> 6. Postman (后端)
+> 7. Android Studio （前端）
+
+## ER图
+
+
+
+
+
+## 前端分工
+

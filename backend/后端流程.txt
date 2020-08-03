@@ -1,0 +1,30 @@
+1. 自己电脑上的开发环境，
+ VSCODE(其他都可以)
+ MysqlWorkbench(数据库逻辑设计的时候 好用，能直接图->SQL代码，快速构建数据库)
+ Postman(校验接口使用)
+ SSH远程连接的工具 (FinalShell Xshell Putty)
+ Git的安装使用
+2. 买服务器 百度云阿里云的学生服务器 10元/月 
+3. 服务器配置 安装相应开发需要用的软件 MYSQL NODEJS Git
+4. 开始写代码 后端
+5. 项目结构
+- root
+ - api //存放具体的接口代码 
+ - config // 存放服务器的配置文件
+ 
+ - tool // 自己写的工具函数
+ - middlerware // 自己写的中间件
+ - node_modules // nodejs 的库文件，不需要修改，由npm这个软件管理的
+ - uploads //存放静态资源，用户上传的图片音视频等
+ - dist // 存放静态资源，前端页面的代码(Web开发用的)
+
+ .gitignore //git相关的配置文件
+ router.js //Express框架的路由文件
+ server.js //服务器的入口文件，启动服务器就输入node server.js
+ package.json
+6. 后端用到的库
+- "express" //最核心的库，实现路由等诸多服务器的功能
+- "mysql" //和数据库打交道的库
+- "express-session" //保证用户登录态使用的，维持用户会话
+- "body-parser": "^1.19.0"  //解析请求体用的库 
+- "multer" //用于上传文件使用的库，
