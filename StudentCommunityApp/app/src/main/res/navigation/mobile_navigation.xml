@@ -32,7 +32,14 @@
         android:id="@+id/navigation_user"
         android:name="com.example.studentcommunityapp.ui.user.UserFragment"
         android:label="@string/title_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_navigation_user_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_modifyAvatarFragment"
+            app:destination="@id/modifyAvatarFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_publish"
         android:name="com.example.studentcommunityapp.ui.publish.PublishFragment"
@@ -58,4 +65,14 @@
         android:name="com.example.studentcommunityapp.ui.course.addCourse.AddCourseFragment"
         android:label="add_course_fragment"
         tools:layout="@layout/add_course_fragment" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.SettingFragment"
+        android:label="setting_fragment"
+        tools:layout="@layout/setting_fragment" />
+    <fragment
+        android:id="@+id/modifyAvatarFragment"
+        android:name="com.example.studentcommunityapp.ui.modifyavatar.ModifyAvatarFragment"
+        android:label="modify_avatar_fragment"
+        tools:layout="@layout/modify_avatar_fragment" />
 </navigation>
