@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -41,7 +42,20 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if(viewType ==0){
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_user_header,parent,false);
-            return new ZeroViewHolder(v);
+            final ZeroViewHolder holder = new ZeroViewHolder(v);
+            holder.setting.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Navigation.findNavController(v).navigate(R.id.action_navigation_user_to_settingFragment);
+                }
+            });
+            holder.avatar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Navigation.findNavController(v).navigate(R.id.action_navigation_user_to_modifyAvatarFragment);
+                }
+            });
+            return holder;
         }
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_user_items,parent,false);
         return new MyViewHolder(v);
@@ -84,7 +98,6 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return mDataSet.size();
     }
     class MyViewHolder extends RecyclerView.ViewHolder{
-        public TextView mTextView;
         CircleImageView imgurl;
         TextView name;
         TextView type;
@@ -103,8 +116,13 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     class ZeroViewHolder extends RecyclerView.ViewHolder {
+        ImageView setting;
+        CircleImageView avatar;
+
         public ZeroViewHolder(View itemView){
             super(itemView);
+            setting = itemView.findViewById(R.id.user_header_setting);
+            avatar = itemView.findViewById(R.id.user_header_avatar);
         }
     }
 }

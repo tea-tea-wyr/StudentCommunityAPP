@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_navigation_home_to_articleFragment"
             app:destination="@id/articleFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_followFragment"
-            app:destination="@id/followFragment" />
     </fragment>
 
     <fragment
@@ -39,6 +36,9 @@
         <action
             android:id="@+id/action_navigation_user_to_modifyAvatarFragment"
             app:destination="@id/modifyAvatarFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_followFragment"
+            app:destination="@id/followFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_publish"
@@ -57,7 +57,7 @@
         tools:layout="@layout/follow_fragment" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.studentcommunityapp.ui.login.LoginFragment"
+        android:name="com.example.studentcommunityapp.ui.loginaaaa.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" />
     <fragment
