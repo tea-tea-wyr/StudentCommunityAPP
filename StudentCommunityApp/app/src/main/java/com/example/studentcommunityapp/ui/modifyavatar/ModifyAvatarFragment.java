@@ -1,4 +1,4 @@
-package com.example.studentcommunityapp.ui.login;
+package com.example.studentcommunityapp.ui.modifyavatar;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -14,24 +14,24 @@ import android.view.ViewGroup;
 
 import com.example.studentcommunityapp.R;
 
-public class LoginFragment extends Fragment {
+public class ModifyAvatarFragment extends Fragment {
 
-    private LoginViewModel mViewModel;
+    private ModifyAvatarViewModel mViewModel;
 
-    public static LoginFragment newInstance() {
-        return new LoginFragment();
+    public static ModifyAvatarFragment newInstance() {
+        return new ModifyAvatarFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.login_fragment, container, false);
+        return inflater.inflate(R.layout.modify_avatar_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(ModifyAvatarViewModel.class);
         // TODO: Use the ViewModel
     }
 
