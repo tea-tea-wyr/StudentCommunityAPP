@@ -40,13 +40,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        final Button button2 = root.findViewById(R.id.home_button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_followFragment);
-            }
-        });
+//        final Button button2 = root.findViewById(R.id.home_button2);
+//        button2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_followFragment);
+//            }
+//        });
 
         return root;
     }

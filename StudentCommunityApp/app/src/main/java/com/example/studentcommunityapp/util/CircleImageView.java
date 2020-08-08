@@ -16,12 +16,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 
-public class ImageViewCircle extends androidx.appcompat.widget.AppCompatImageView {
-    private Paint paint;
-    private Matrix matrix;
-    private float height;
-    private float width;
-    private float adius;
+public class CircleImageView extends androidx.appcompat.widget.AppCompatImageView {
 
     //画笔
     private Paint mPaint;
@@ -30,15 +25,15 @@ public class ImageViewCircle extends androidx.appcompat.widget.AppCompatImageVie
     //图片的宿放比例
     private float mScale;
 
-    public ImageViewCircle(Context context) {
+    public CircleImageView(Context context) {
         super(context);
     }
 
-    public ImageViewCircle(Context context, @Nullable AttributeSet attrs) {
+    public CircleImageView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ImageViewCircle(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CircleImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -77,4 +72,5 @@ public class ImageViewCircle extends androidx.appcompat.widget.AppCompatImageVie
             super.onDraw(canvas);
         }
     }
+
 }
