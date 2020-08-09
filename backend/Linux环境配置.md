@@ -60,7 +60,7 @@
       - 用户名
         - root
       - 密码
-        - password
+        - Chezijie
       - 用户名
         - debian-sys-maint
       - 密码
