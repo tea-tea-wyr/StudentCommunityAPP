@@ -61,6 +61,10 @@
         - root
       - 密码
         - password
+      - 用户名
+        - debian-sys-maint
+      - 密码
+        - 4nRkN7As1coDqRU8
   - MysqlWorkbench测试
 
 ## 使用须知
