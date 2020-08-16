@@ -1,4 +1,4 @@
-package com.example.studentcommunityapp.ui.article;
+package com.example.studentcommunityapp.ui.more;
 
 import androidx.lifecycle.ViewModel;
 
