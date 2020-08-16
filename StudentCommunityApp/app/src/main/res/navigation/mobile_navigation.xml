@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_home_to_articleFragment"
             app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_article_MoreFragment"
+            app:destination="@id/article_MoreFragment" />
     </fragment>
 
     <fragment
@@ -49,7 +52,17 @@
         android:id="@+id/articleFragment"
         android:name="com.example.studentcommunityapp.ui.article.ArticleFragment"
         android:label="article_fragment"
-        tools:layout="@layout/article_fragment" />
+        tools:layout="@layout/article_fragment" >
+        <action
+            android:id="@+id/action_articleFragment_to_navigation_home2"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_articleFragment_to_article_Fragment1"
+            app:destination="@id/article_Fragment1" />
+        <action
+            android:id="@+id/action_articleFragment_to_article_Fragment2"
+            app:destination="@id/article_Fragment2" />
+    </fragment>
     <fragment
         android:id="@+id/followFragment"
         android:name="com.example.studentcommunityapp.ui.follow.FollowFragment"
@@ -59,7 +72,11 @@
         android:id="@+id/loginFragment"
         android:name="com.example.studentcommunityapp.ui.loginaaaa.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <fragment
         android:id="@+id/addCourseFragment"
         android:name="com.example.studentcommunityapp.ui.course.addCourse.AddCourseFragment"
@@ -75,4 +92,23 @@
         android:name="com.example.studentcommunityapp.ui.modifyavatar.ModifyAvatarFragment"
         android:label="modify_avatar_fragment"
         tools:layout="@layout/modify_avatar_fragment" />
+    <fragment
+        android:id="@+id/article_MoreFragment"
+        android:name="com.example.studentcommunityapp.ui.article.Article_MoreFragment"
+        android:label="Article_MoreFragment" >
+        <action
+            android:id="@+id/action_article_MoreFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_article_MoreFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/article_Fragment1"
+        android:name="com.example.studentcommunityapp.ui.article.Article_Fragment1"
+        android:label="Article_Fragment1" />
+    <fragment
+        android:id="@+id/article_Fragment2"
+        android:name="com.example.studentcommunityapp.ui.article.Article_Fragment2"
+        android:label="Article_Fragment2" />
 </navigation>
