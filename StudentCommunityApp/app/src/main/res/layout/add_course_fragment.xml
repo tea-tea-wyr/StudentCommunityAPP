@@ -1,24 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDGray"
     tools:context=".ui.article.ArticleFragment">
 
-    <TextView
-        android:id="@+id/text_add_course"
-        android:text="添加课程"
+
+
+
+    <LinearLayout
+        android:id="@+id/add_course_1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="50dp"
+        android:background="@color/colorBackground"
+        android:orientation="horizontal"
+        android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_course"
+            android:layout_width="71dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/colorBackground"
+            android:scaleType="centerInside"
+            android:src="@drawable/back"
+            android:text="课程"
+            android:textColor="@color/colorDGray" />
+
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="课程"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:gravity="left|center" />
+
+        <ImageButton
+            android:id="@+id/add_course_upload"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@color/colorBackground"
+            android:scaleType="centerInside"
+            android:src="@drawable/ok"
+            android:text="课程"
+            android:textColor="@color/colorDGray"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/add_course_1"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/text_week1"
+            android:layout_width="220dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/txt_tab_addcourse"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/course_time"
+            android:textColor="@color/colorDGray"
+            android:textSize="24sp"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="20dp" />
+
+        <EditText
+            android:id="@+id/tv_select_input"
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/txt_input"
+            android:hint="@string/input_course_weekday"
+            android:padding="8dp"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/txt_input"
+            android:gravity="top|left"
+            android:hint="@string/input_course_time"
+            android:padding="8dp"
+            android:textSize="15sp"></EditText>
+
+        <TextView
+            android:id="@+id/text_week1"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="32dp"
+
+            android:background="@drawable/txt_tab_addcourse"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@string/course_place"
+            android:textColor="@color/colorDGray"
+            android:textSize="24sp"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="20dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/txt_input"
+            android:gravity="top|left"
+            android:hint="@string/input_course_place"
+            android:padding="8dp"
+            android:textSize="15sp"></EditText>
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
