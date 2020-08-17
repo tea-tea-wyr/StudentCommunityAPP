@@ -13,11 +13,5 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="s1">更多</string>
-    <string name="s2">视频</string>
-    <string name="s3">文章</string>
-    <string name="s4">音频</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="content1">编译器的第一个步骤称为词法分析或扫描。词法分析器读入组成源程序的字符流，并将其组成有意义的词素的序列。形如&lt;token_name,attribute-value&gt;这样的词法单元。（token-name是由语法分析使用的抽象符号，attribute-value是指向符号表中关于这个词法单元的条目，符号表条目的信息会被语义分析和代码生成步骤使用）\n文法即语言中的每个句子可以用严格定义的规则来构造.自然语言汉语中的意思1.法制;法规。 2.文章的作法。 3.语法。语言的结构方式。包括词的构成和变化﹐词组和句子的组织。文法即文章的书写法规，一般用来指以文字、词语、短句、句子的编排而组成的完整语句和文章的合理性组织。</string>
-    <string name="content2">编译的第2个步骤称为语法分析或解析。语法分析器使用由词法分析器生成的各词法单元的第一个分量来创建树形的中间表示。该中间表示给出了词法分析产生的词法单元的语法结构。常用的表示方法是语法树，树中每个内部节点表示一个运算，而该节点的子节点表示运算的分量。\n语义分析的一个重要部分就是类型检查。比如很多语言要求数组下标必须为整数，如果使用浮点数作为下标，编译器就必须报错。再比如，很多语言允许某些类型转换，称为自动类型转换。</string>
+
 </resources>

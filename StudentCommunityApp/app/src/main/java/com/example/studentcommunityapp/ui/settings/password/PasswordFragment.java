@@ -1,4 +1,4 @@
-package com.example.studentcommunityapp.ui.settings;
+package com.example.studentcommunityapp.ui.settings.password;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -14,25 +14,24 @@ import android.view.ViewGroup;
 
 import com.example.studentcommunityapp.R;
 
-public class SettingFragment extends Fragment {
+public class PasswordFragment extends Fragment {
 
-    private SettingViewModel mViewModel;
+    private PasswordViewModel mViewModel;
 
-    public static SettingFragment newInstance() {
-        return new SettingFragment();
+    public static PasswordFragment newInstance() {
+        return new PasswordFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        
-        return inflater.inflate(R.layout.setting_fragment, container, false);
+        return inflater.inflate(R.layout.password_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(SettingViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(PasswordViewModel.class);
         // TODO: Use the ViewModel
     }
 

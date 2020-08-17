@@ -1,4 +1,4 @@
-package com.example.studentcommunityapp.ui.settings;
+package com.example.studentcommunityapp.ui.settings.Class;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -14,25 +14,24 @@ import android.view.ViewGroup;
 
 import com.example.studentcommunityapp.R;
 
-public class SettingFragment extends Fragment {
+public class ClassFragment extends Fragment {
 
-    private SettingViewModel mViewModel;
+    private ClassViewModel mViewModel;
 
-    public static SettingFragment newInstance() {
-        return new SettingFragment();
+    public static ClassFragment newInstance() {
+        return new ClassFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        
-        return inflater.inflate(R.layout.setting_fragment, container, false);
+        return inflater.inflate(R.layout.class_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(SettingViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(ClassViewModel.class);
         // TODO: Use the ViewModel
     }
 

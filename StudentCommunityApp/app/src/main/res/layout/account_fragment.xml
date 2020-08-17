@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f8f8f8"
-    tools:context=".ui.settings.SettingFragment">
+    tools:context=".ui.settings.account.Account">
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:layout_weight="20"
             android:gravity="center"
-            android:text="设置"
+            android:text="账号和安全"
             android:textColor="#ffffff"
             android:layout_marginRight="20dp"
             android:textSize="20sp"
@@ -46,12 +46,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="账号与安全"
+            android:text="昵称"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小西"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,12 +77,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="隐私设置"
+            android:text="登录密码"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改密码"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,12 +107,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="通用设置"
+            android:text="学校"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未设置"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -116,12 +137,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="通知设置"
+            android:text="学院"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未设置"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,12 +167,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="偏好设置"
+            android:text="班级"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未设置"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -162,12 +197,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="夜间模式"
+            android:text="入学年份"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未设置"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -185,12 +227,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="帮助与客服"
+            android:text="微信"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未设置"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -208,12 +257,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="关于我们"
+            android:text="手机号"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未设置"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -225,18 +281,25 @@
         android:id="@+id/l9"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="3dp"
         android:background="#ffffff"
         app:layout_constraintTop_toBottomOf="@+id/l8">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="退出登录"
+            android:text="邮箱"
             android:textSize="20sp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未设置"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
