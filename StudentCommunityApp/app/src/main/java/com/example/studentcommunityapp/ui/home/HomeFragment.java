@@ -62,7 +62,22 @@ public class HomeFragment extends Fragment {
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_article_MoreFragment);
+                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_articleMoreFragment);
+            }
+        });
+        final ImageView image1=root.findViewById(R.id.imageView3);
+        image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_videoMoreFragment);
+            }
+        });
+
+        final ImageView image2=root.findViewById(R.id.imageView5);
+        image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_audioMoreFragment);
             }
         });
 
@@ -145,7 +160,7 @@ public class HomeFragment extends Fragment {
      * 自定义Adapter
      *
      */
-    private class ViewPagerAdapter extends PagerAdapter {
+    public class ViewPagerAdapter extends PagerAdapter {
 
         @Override
         public int getCount() {
