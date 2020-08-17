@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studentcommunityapp.R;
@@ -34,6 +35,13 @@ public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.ViewHolder>{
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_part3,parent,false);
         //将之前写好的list_view封装到一个View中
         AudioAdapter.ViewHolder holder=new AudioAdapter.ViewHolder(view);
+
+        holder.Audioimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_articleFragment);
+            }
+        });
         return holder;
     }
 
