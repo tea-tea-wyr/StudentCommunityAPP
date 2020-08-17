@@ -13,10 +13,67 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="week1">星期一</string>
+    <string name="week2">星期二</string>
+    <string name="week3">星期三</string>
+    <string name="week4">星期四</string>
+    <string name="week5">星期五</string>
+
+    <string name="course_time">时间</string>
+    <string name="course_place">地点</string>
+
+    <string name="input_course_time">请输入课程具体时间</string>
+    <string name="input_course_place">请输入课程地点</string>
+    <string name="input_course_weekday">例：星期天</string>
+
+    <string name="article_sketch">文章简述</string>
+    <string name="article_content">文章内容</string>
+    <string name="article_button">发表文章</string>
+    <string name="article_title_1">标题-01</string>
+    <string name="article_title_2">标题-02</string>
+    <string name="article_title_3">标题-03</string>
+    <string name="article_title_content_1">输入第一段文章内容</string>
+    <string name="article_title_content_2">输入第二段文章内容</string>
+    <string name="article_title_content_3">输入第三段文章内容</string>
+    <string name="article_title">标题（不多于15字）</string>
+    <string name="article_introduction">请简单介绍文章内容，100字-150字左右</string>
+    <string name="article_CoverMap">封面图</string>
+
+    <string name="video_sketch">视频资料简述</string>
+    <string name="video_content">相关内容</string>
+    <string name="video_button">发布资料</string>
+    <string name="video_title_1">标题-01</string>
+    <string name="video_title_2">标题-02</string>
+    <string name="video_title_3">标题-03</string>
+    <string name="video_title_content_1">输入第一段相关内容</string>
+    <string name="video_title_content_2">输入第二段相关内容</string>
+    <string name="video_title_content_3">输入第三段相关内容</string>
+    <string name="video_title">标题（不多于15字）</string>
+    <string name="video_introduction">请简单介绍视频内容，100字-150字左右</string>
+
+    <string name="vf_sketch">音频资料简述</string>
+    <string name="vf_content">相关内容</string>
+    <string name="vf_button">发布资料</string>
+    <string name="vf_title_1">标题-01</string>
+    <string name="vf_title_2">标题-02</string>
+    <string name="vf_title_3">标题-03</string>
+    <string name="vf_title_content_1">输入第一段相关内容</string>
+    <string name="vf_title_content_2">输入第二段相关内容</string>
+    <string name="vf_title_content_3">输入第三段相关内容</string>
+    <string name="vf_title">标题（不多于15字）</string>
+    <string name="vf_introduction">请简单介绍音频内容，100字-150字左右</string>
+
+
+
+    <string name="upload_article">文章</string>
+    <string name="upload_video">视频</string>
+    <string name="upload_VF">音频</string>
     <string name="s1">更多</string>
     <string name="s2">视频</string>
     <string name="s3">文章</string>
     <string name="s4">音频</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content1">编译器的第一个步骤称为词法分析或扫描。词法分析器读入组成源程序的字符流，并将其组成有意义的词素的序列。形如&lt;token_name,attribute-value&gt;这样的词法单元。（token-name是由语法分析使用的抽象符号，attribute-value是指向符号表中关于这个词法单元的条目，符号表条目的信息会被语义分析和代码生成步骤使用）\n文法即语言中的每个句子可以用严格定义的规则来构造.自然语言汉语中的意思1.法制;法规。 2.文章的作法。 3.语法。语言的结构方式。包括词的构成和变化﹐词组和句子的组织。文法即文章的书写法规，一般用来指以文字、词语、短句、句子的编排而组成的完整语句和文章的合理性组织。</string>
+    <string name="content2">编译的第2个步骤称为语法分析或解析。语法分析器使用由词法分析器生成的各词法单元的第一个分量来创建树形的中间表示。该中间表示给出了词法分析产生的词法单元的语法结构。常用的表示方法是语法树，树中每个内部节点表示一个运算，而该节点的子节点表示运算的分量。\n语义分析的一个重要部分就是类型检查。比如很多语言要求数组下标必须为整数，如果使用浮点数作为下标，编译器就必须报错。再比如，很多语言允许某些类型转换，称为自动类型转换。</string>
 </resources>
