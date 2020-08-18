@@ -31,7 +31,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class FollowFragment extends Fragment {
-
+    private List<Article> mData;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private FollowAdapter followAdapter;
     private FollowViewModel mViewModel;
     private ViewPager mViewPaper;
     private List<ImageView> images;
@@ -105,6 +108,12 @@ public class FollowFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_followFragment_to_navigation_user);
             }
         });
+        initData();
+        mRecyclerView = root.findViewById(R.id.follow_recyclerview);
+        layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
+        mRecyclerView.setLayoutManager(layoutManager);
+        followAdapter = new FollowAdapter(mData);
+        mRecyclerView.setAdapter(followAdapter);
 
         return root;
     }
@@ -194,5 +203,13 @@ public class FollowFragment extends Fragment {
             scheduledExecutorService.shutdown();
             scheduledExecutorService = null;
         }
+    }
+
+    private void initData(){
+        mData = new ArrayList<>();
+        for(int i=0; i<50; i++){
+            mData.add(new Article("http://world.people.com.cn/NMediaFile/2019/0610/MAIN201906100858000177823780005.jpg","小西","发表了文章","C语言基础","http://world.people.com.cn/NMediaFile/2018/0913/MAIN201809131000000359718834615.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+        }
+
     }
 }

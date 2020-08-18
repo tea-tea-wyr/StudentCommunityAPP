@@ -14,12 +14,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="5dp"
-            android:layout_height="20dp"
+            android:id="@+id/account_back"
+            android:clickable="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:background="@drawable/ic_back" />
+            app:srcCompat="@drawable/ic_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,13 +31,14 @@
             android:gravity="center"
             android:text="账号和安全"
             android:textColor="#ffffff"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="50dp"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
 
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/li1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -68,6 +71,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -98,6 +102,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -128,6 +133,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l4"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -158,6 +164,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l5"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -188,6 +195,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l6"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -218,6 +226,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l7"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -248,6 +257,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l8"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -278,6 +288,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l9"
         android:layout_width="match_parent"
         android:layout_height="50dp"

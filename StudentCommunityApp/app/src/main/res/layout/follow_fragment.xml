@@ -21,11 +21,11 @@
 
         <ImageView
             android:id="@+id/back_user"
-            android:layout_width="20dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/ic_back"
+            app:srcCompat="@drawable/ic_back"
             android:clickable="true" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:layout_marginRight="32dp"
+            android:layout_marginRight="50dp"
             android:gravity="center"
             android:text="我的关注"
             android:textAlignment="center"
@@ -104,6 +104,17 @@
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/follow_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
