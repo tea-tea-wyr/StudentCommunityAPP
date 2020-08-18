@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -53,6 +54,12 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 @Override
                 public void onClick(View v) {
                     Navigation.findNavController(v).navigate(R.id.action_navigation_user_to_modifyAvatarFragment);
+                }
+            });
+            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Navigation.findNavController(v).navigate(R.id.action_navigation_user_to_followFragment);
                 }
             });
             return holder;
@@ -118,11 +125,13 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     class ZeroViewHolder extends RecyclerView.ViewHolder {
         ImageView setting;
         CircleImageView avatar;
+        LinearLayout linearLayout;
 
         public ZeroViewHolder(View itemView){
             super(itemView);
             setting = itemView.findViewById(R.id.user_header_setting);
             avatar = itemView.findViewById(R.id.user_header_avatar);
+            linearLayout = itemView.findViewById(R.id.user_header_follow);
         }
     }
 }
