@@ -112,6 +112,9 @@
         <action
             android:id="@+id/action_videoMoreFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_videoMoreFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/audioMoreFragment"
@@ -120,6 +123,9 @@
         <action
             android:id="@+id/action_audioMoreFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_audioMoreFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/account"

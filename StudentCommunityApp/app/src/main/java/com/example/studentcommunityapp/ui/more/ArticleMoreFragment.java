@@ -15,11 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Essay;
-import com.example.studentcommunityapp.ui.home.EssayAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
