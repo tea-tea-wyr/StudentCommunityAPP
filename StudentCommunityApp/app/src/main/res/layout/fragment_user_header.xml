@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="@color/colorBackground"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,24 +19,26 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="50dp"
             android:text="我的"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="25sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
 
         <ImageView
             android:id="@+id/user_header_setting"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/ic_settings"
+
+            app:srcCompat="@drawable/ic_settings"
             android:clickable="true" />
     </LinearLayout>
 
@@ -168,6 +170,7 @@
                 android:layout_gravity="center"/>
         </LinearLayout>
         <LinearLayout
+            android:contextClickable="true"
             android:id="@+id/user_header_follow"
             android:clickable="true"
             android:layout_width="wrap_content"

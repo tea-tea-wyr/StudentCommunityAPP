@@ -238,11 +238,11 @@ public class HomeFragment extends Fragment {
 
     public void initEssays()
     {
-        Essay essay1 = new Essay(R.drawable.aaa, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的一门重要专......");
+        Essay essay1 = new Essay(R.drawable.aaa, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的......");
         essay.add(essay1);
-        Essay essay2 = new Essay(R.drawable.bbb, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的一门重要专......");
+        Essay essay2 = new Essay(R.drawable.bbb, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的......");
         essay.add(essay2);
-        Essay essay3 = new Essay(R.drawable.cccc, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的一门重要专......");
+        Essay essay3 = new Essay(R.drawable.cccc, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的......");
         essay.add(essay3);
 
     }

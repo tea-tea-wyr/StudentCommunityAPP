@@ -13,6 +13,62 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="week1">星期一</string>
+    <string name="week2">星期二</string>
+    <string name="week3">星期三</string>
+    <string name="week4">星期四</string>
+    <string name="week5">星期五</string>
+
+    <string name="course_time">时间</string>
+    <string name="course_place">地点</string>
+
+    <string name="input_course_time">请输入课程具体时间</string>
+    <string name="input_course_place">请输入课程地点</string>
+    <string name="input_course_weekday">例：星期天</string>
+
+    <string name="article_sketch">文章简述</string>
+    <string name="article_content">文章内容</string>
+    <string name="article_button">发表文章</string>
+    <string name="article_title_1">标题-01</string>
+    <string name="article_title_2">标题-02</string>
+    <string name="article_title_3">标题-03</string>
+    <string name="article_title_content_1">输入第一段文章内容</string>
+    <string name="article_title_content_2">输入第二段文章内容</string>
+    <string name="article_title_content_3">输入第三段文章内容</string>
+    <string name="article_title">标题（不多于15字）</string>
+    <string name="article_introduction">请简单介绍文章内容，100字-150字左右</string>
+    <string name="article_CoverMap">封面图</string>
+
+    <string name="video_sketch">视频资料简述</string>
+    <string name="video_content">相关内容</string>
+    <string name="video_button">发布资料</string>
+    <string name="video_title_1">标题-01</string>
+    <string name="video_title_2">标题-02</string>
+    <string name="video_title_3">标题-03</string>
+    <string name="video_title_content_1">输入第一段相关内容</string>
+    <string name="video_title_content_2">输入第二段相关内容</string>
+    <string name="video_title_content_3">输入第三段相关内容</string>
+    <string name="video_title">标题（不多于15字）</string>
+    <string name="video_introduction">请简单介绍视频内容，100字-150字左右</string>
+
+    <string name="vf_sketch">音频资料简述</string>
+    <string name="vf_content">相关内容</string>
+    <string name="vf_button">发布资料</string>
+    <string name="vf_title_1">标题-01</string>
+    <string name="vf_title_2">标题-02</string>
+    <string name="vf_title_3">标题-03</string>
+    <string name="vf_title_content_1">输入第一段相关内容</string>
+    <string name="vf_title_content_2">输入第二段相关内容</string>
+    <string name="vf_title_content_3">输入第三段相关内容</string>
+    <string name="vf_title">标题（不多于15字）</string>
+    <string name="vf_introduction">请简单介绍音频内容，100字-150字左右</string>
+
+
+
+    <string name="upload_article">文章</string>
+    <string name="upload_video">视频</string>
+    <string name="upload_VF">音频</string>
     <string name="s1">更多</string>
     <string name="s2">视频</string>
     <string name="s3">文章</string>
