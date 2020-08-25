@@ -46,7 +46,7 @@ public class UserFragment extends Fragment {
     private void initData(){
         mData = new ArrayList<>();
         for(int i=0; i<50; i++){
-            mData.add(new Article("http://world.people.com.cn/NMediaFile/2019/0610/MAIN201906100858000177823780005.jpg","小西","发表了文章","C语言基础","http://world.people.com.cn/NMediaFile/2018/0913/MAIN201809131000000359718834615.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+            mData.add(new Article("http://81.70.27.208:8088/picture/1596198585.jpg","小西","发表了文章","C语言基础","http://world.people.com.cn/NMediaFile/2018/0913/MAIN201809131000000359718834615.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
         }
 
     }
