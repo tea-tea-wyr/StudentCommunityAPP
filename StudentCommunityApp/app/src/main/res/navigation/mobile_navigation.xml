@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_navigation_home_to_audioMoreFragment"
             app:destination="@id/audioMoreFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -48,6 +51,9 @@
         <action
             android:id="@+id/action_navigation_user_to_followFragment"
             app:destination="@id/followFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_publish"
@@ -71,6 +77,9 @@
         <action
             android:id="@+id/action_followFragment_to_navigation_user"
             app:destination="@id/navigation_user" />
+        <action
+            android:id="@+id/action_followFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCourseFragment"
@@ -243,5 +252,17 @@
         <action
             android:id="@+id/action_yearFragment_to_account"
             app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.studentcommunityapp.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_user2"
+            app:destination="@id/navigation_user" />
     </fragment>
 </navigation>

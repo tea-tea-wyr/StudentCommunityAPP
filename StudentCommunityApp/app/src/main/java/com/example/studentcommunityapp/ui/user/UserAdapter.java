@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -111,6 +112,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         ImageView picture;
         TextView title;
         TextView content;
+        CardView cardView;
         public MyViewHolder(View itemView){
             super(itemView);
             imgurl = itemView.findViewById(R.id.user_items_imageurl);
@@ -119,6 +121,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             picture = itemView.findViewById(R.id.user_items_picture);
             title = itemView.findViewById(R.id.user_items_title);
             content = itemView.findViewById(R.id.user_items_content);
+            cardView = itemView.findViewById(R.id.user_items_card);
         }
     }
 
