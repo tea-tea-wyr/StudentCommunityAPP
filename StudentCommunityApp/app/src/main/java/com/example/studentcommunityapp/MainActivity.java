@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                if(destination.getId()==R.id.settingFragment||destination.getId()==R.id.articleFragment){
+                if(destination.getId()==R.id.settingFragment||destination.getId()==R.id.articleFragment||destination.getId()==R.id.loginFragment){
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

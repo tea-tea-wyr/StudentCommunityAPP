@@ -1,18 +1,19 @@
 package com.example.studentcommunityapp.ui.home;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,7 +24,12 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Audio;
 import com.example.studentcommunityapp.bean.Essay;
+import com.example.studentcommunityapp.bean.LoginState;
 import com.example.studentcommunityapp.bean.Video;
+import com.example.studentcommunityapp.service.loginstatemessage;
+import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +38,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class HomeFragment extends Fragment {
+    private AlertDialog.Builder builder;
+    private SharedPreferences Infos;
     private HomeViewModel homeViewModel;
     private ViewPager mViewPaper;
     private List<ImageView> images;
@@ -57,7 +65,8 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        final View root = inflater.inflate(R.layout.fragment_home, container, false);
         final ImageView image=root.findViewById(R.id.imageView2);
         image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +87,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_audioMoreFragment);
+            }
+        });
+
+        final Button login = root.findViewById(R.id.home_login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(root).navigate(R.id.action_navigation_home_to_loginFragment);
             }
         });
 
@@ -285,5 +302,29 @@ public class HomeFragment extends Fragment {
         audio.add(audio7);
         Audio audio8 = new Audio(R.drawable.d,"操作系统");
         audio.add(audio8);
+    }
+    @Subscribe
+    public void GetLoginState(loginstatemessage msg) {
+        String res = msg.res;
+        Gson gson = new Gson();
+        LoginState state = gson.fromJson(res, LoginState.class);
+        Boolean islogin = state.getData().getIs_login();
+        System.out.println("登录状态" + state.getData().getIs_login());/**/
+        if (!islogin) {
+            Infos.edit().putString("user", "").apply();//首次启动
+            builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("请先登录");// 设置标题
+            builder.setCancelable(false);
+            // 为对话框设置取消按钮
+            builder.setPositiveButton("去登录", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    Navigation.findNavController(getView()).navigate(R.id.action_navigation_home_to_loginFragment);
+                }
+            });
+            Looper.prepare();
+            builder.create().show();// 使用show()方法显示对话框
+            Looper.loop();
+        }
     }
 }
