@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Video;
 
@@ -17,10 +18,10 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder>{
     private List<Video> mVideoList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView video_image;
+        ImageView video_picture;
         public ViewHolder(View itemView) {
             super(itemView);
-            video_image=(ImageView) itemView.findViewById(R.id.imageview);
+            video_picture=(ImageView) itemView.findViewById(R.id.imageview);
         }
     }
     public VideoAdapter(List<Video> videoList){
@@ -33,7 +34,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder>{
         //将之前写好的list_view封装到一个View中
         VideoAdapter.ViewHolder holder=new VideoAdapter.ViewHolder(view);
 
-        holder.video_image.setOnClickListener(new View.OnClickListener() {
+        holder.video_picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_articleFragment);
@@ -45,8 +46,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(VideoAdapter.ViewHolder holder, int position) {
         Video video=mVideoList.get(position);
-        holder.video_image.setImageResource(video.getVideo_imageID());
-
+        Glide.with(holder.itemView)
+                .load(video.getVideo_picture())
+                .into(holder.video_picture);
     }
 
     @Override

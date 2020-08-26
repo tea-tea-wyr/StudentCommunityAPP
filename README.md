@@ -16,7 +16,7 @@ This is a new app about student community.
 
 ## UI设计
 
-https://modao.cc/app/3d2790b07db8a63a7407720589a96e152598c4e9?simulator_type=device&sticky
+https://modao.cc/app/JiclWGAiT6EXZOSHuwa4QicQz747Zpq?simulator_type=device&sticky
 
 ## 环境配置
 
@@ -34,5 +34,5 @@ https://modao.cc/app/3d2790b07db8a63a7407720589a96e152598c4e9?simulator_type=dev
 
 
 
-## 前端分工
+## 分工
 

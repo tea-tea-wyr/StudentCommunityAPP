@@ -21,15 +21,17 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/Essay_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lines="3"
+            android:ellipsize="end"
             android:layout_marginTop="8dp"
-            android:textColor="#000000"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#000000" />
     </LinearLayout>
 </LinearLayout>

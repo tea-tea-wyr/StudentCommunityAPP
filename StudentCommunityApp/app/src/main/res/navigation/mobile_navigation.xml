@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_navigation_user_to_articleFragment"
             app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_articleFragment2"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_publish"
@@ -79,6 +82,9 @@
             app:destination="@id/navigation_user" />
         <action
             android:id="@+id/action_followFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_followFragment_to_articleFragment2"
             app:destination="@id/articleFragment" />
     </fragment>
     <fragment
