@@ -29,7 +29,6 @@ import com.example.studentcommunityapp.bean.Video;
 import com.example.studentcommunityapp.service.loginstatemessage;
 import com.google.gson.Gson;
 
-import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -303,7 +302,6 @@ public class HomeFragment extends Fragment {
         Audio audio8 = new Audio(R.drawable.d,"操作系统");
         audio.add(audio8);
     }
-    @Subscribe
     public void GetLoginState(loginstatemessage msg) {
         String res = msg.res;
         Gson gson = new Gson();
@@ -323,7 +321,7 @@ public class HomeFragment extends Fragment {
                 }
             });
             Looper.prepare();
-            builder.create().show();// 使用show()方法显示对话框
+            builder.create().show();// 使用show()方法   显示对话框
             Looper.loop();
         }
     }

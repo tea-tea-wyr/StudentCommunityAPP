@@ -29,7 +29,6 @@ import com.example.studentcommunityapp.util.CircleImageView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.JsonObject;
 
-import org.greenrobot.eventbus.Subscribe;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
