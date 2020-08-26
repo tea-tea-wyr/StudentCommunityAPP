@@ -19,10 +19,11 @@
     <string name="week3">星期三</string>
     <string name="week4">星期四</string>
     <string name="week5">星期五</string>
-
+    <string name="course_course">课程</string>
     <string name="course_time">时间</string>
     <string name="course_place">地点</string>
 
+    <string name="input_course_course">请输入课程名称</string>
     <string name="input_course_time">请输入课程具体时间</string>
     <string name="input_course_place">请输入课程地点</string>
     <string name="input_course_weekday">例：星期天</string>
@@ -30,6 +31,7 @@
     <string name="article_sketch">文章简述</string>
     <string name="article_content">文章内容</string>
     <string name="article_button">发表文章</string>
+    <string name="article_title_content">输入文章内容</string>
     <string name="article_title_1">标题-01</string>
     <string name="article_title_2">标题-02</string>
     <string name="article_title_3">标题-03</string>
@@ -43,6 +45,7 @@
     <string name="video_sketch">视频资料简述</string>
     <string name="video_content">相关内容</string>
     <string name="video_button">发布资料</string>
+    <string name="video_title_content">输入视频内容</string>
     <string name="video_title_1">标题-01</string>
     <string name="video_title_2">标题-02</string>
     <string name="video_title_3">标题-03</string>
@@ -55,6 +58,7 @@
     <string name="vf_sketch">音频资料简述</string>
     <string name="vf_content">相关内容</string>
     <string name="vf_button">发布资料</string>
+    <string name="vf_title_content">输入音频内容</string>
     <string name="vf_title_1">标题-01</string>
     <string name="vf_title_2">标题-02</string>
     <string name="vf_title_3">标题-03</string>
