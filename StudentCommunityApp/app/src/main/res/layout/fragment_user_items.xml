@@ -40,6 +40,7 @@
                     android:layout_marginLeft="30dp"/>
             </LinearLayout>
             <androidx.cardview.widget.CardView
+                android:id="@+id/user_items_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
