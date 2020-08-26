@@ -7,17 +7,17 @@
     android:background="@color/colorDGray"
     tools:context=".ui.publish.PublishFragment">
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/upload_nav_view"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="0dp"-->
-<!--        android:layout_marginEnd="0dp"-->
-<!--        android:background="?android:attr/windowBackground"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!-- />-->
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:id="@+id/upload_nav_view"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="0dp"-->
+    <!--        android:layout_marginEnd="0dp"-->
+    <!--        android:background="?android:attr/windowBackground"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!-- />-->
 
 
     <ScrollView
@@ -158,7 +158,7 @@
             <EditText
                 android:id="@+id/input_article_title_1"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="100dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
@@ -166,90 +166,14 @@
                 android:background="@drawable/txt_input"
                 android:ems="15"
                 android:gravity="top|left"
-                android:hint="@string/article_title_1"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-            <EditText
-                android:id="@+id/input_article_introduction_1"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="150"
-                android:gravity="top|left"
-                android:hint="@string/article_title_content_1"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-
-            <EditText
-                android:id="@+id/input_article_title_2"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="15"
-                android:gravity="top|left"
-                android:hint="@string/article_title_2"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-            <EditText
-                android:id="@+id/input_article_introduction_2"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="150"
-                android:gravity="top|left"
-                android:hint="@string/article_title_content_2"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-
-            <EditText
-                android:id="@+id/input_article_title_3"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="15"
-                android:gravity="top|left"
-                android:hint="@string/article_title_3"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-            <EditText
-                android:id="@+id/input_article_introduction_3"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="150"
-                android:gravity="top|left"
-                android:hint="@string/article_title_content_3"
+                android:hint="@string/article_title_content"
                 android:padding="8dp"
                 android:textSize="15sp"/>
 
 
 
             <Button
+                android:id="@+id/article_add_button"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
@@ -286,311 +210,311 @@
 
 
 
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:background="@null"-->
-<!--    android:orientation="vertical">-->
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="@null"-->
+    <!--    android:orientation="vertical">-->
 
 
-<!--    <android.support.design.widget.TabLayout-->
-<!--        android:id="@+id/tb_monetary"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:background="#ffffff"-->
-<!--        app:tabGravity="fill"-->
-<!--        app:tabIndicatorColor="#8B1C21"-->
-<!--        app:tabIndicatorHeight="1dp"-->
-<!--        app:tabMaxWidth="0dp"-->
-<!--        app:tabSelectedTextColor="#8B1C21"/>-->
+    <!--    <android.support.design.widget.TabLayout-->
+    <!--        android:id="@+id/tb_monetary"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:background="#ffffff"-->
+    <!--        app:tabGravity="fill"-->
+    <!--        app:tabIndicatorColor="#8B1C21"-->
+    <!--        app:tabIndicatorHeight="1dp"-->
+    <!--        app:tabMaxWidth="0dp"-->
+    <!--        app:tabSelectedTextColor="#8B1C21"/>-->
 
-<!--    <FrameLayout-->
-<!--        android:id="@+id/fl_monetary_replace"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/fl_monetary_replace"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"/>-->
 
-<!--</LinearLayout>-->
-
-
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:background="@color/colorDGray"-->
-<!--    tools:context=".ui.publish.PublishFragment">-->
-
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/upload_nav_view"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="0dp"-->
-<!--        android:layout_marginEnd="0dp"-->
-<!--        android:background="?android:attr/windowBackground"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:menu="@menu/bottom_nav_upload" />-->
+    <!--</LinearLayout>-->
 
 
-<!--    <ScrollView-->
-<!--        android:id="@+id/publish_scrollView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/upload_nav_view"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/nav_view"-->
-<!--        tools:ignore="MissingConstraints">-->
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="@color/colorDGray"-->
+    <!--    tools:context=".ui.publish.PublishFragment">-->
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/article_sketch"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:orientation="vertical"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/upload_nav_view"-->
-
-<!--            >-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="15dp"-->
-<!--                android:layout_marginTop="32dp"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="25dp"-->
-<!--                    android:layout_height="25dp"-->
-<!--                    android:src="@drawable/article_tab" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/article_sketch"-->
-<!--                    android:textColor="@color/colorGreen"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold" />-->
-
-<!--            </LinearLayout>-->
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:id="@+id/upload_nav_view"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="0dp"-->
+    <!--        android:layout_marginEnd="0dp"-->
+    <!--        android:background="?android:attr/windowBackground"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:menu="@menu/bottom_nav_upload" />-->
 
 
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_title"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="15"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_title"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"-->
-<!--                tools:ignore="DuplicateIds"/>-->
+    <!--    <ScrollView-->
+    <!--        android:id="@+id/publish_scrollView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/upload_nav_view"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/nav_view"-->
+    <!--        tools:ignore="MissingConstraints">-->
 
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_introduction"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="150"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_introduction"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"-->
-<!--                tools:ignore="DuplicateIds"/>-->
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/article_sketch"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/upload_nav_view"-->
 
-<!--            <TextView-->
-<!--                android:layout_width="360dp"-->
-<!--                android:layout_height="20dp"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:text="@string/article_CoverMap"-->
-<!--                android:textSize="15sp" />-->
+    <!--            >-->
 
-<!--            <FrameLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="15dp"-->
+    <!--                android:layout_marginTop="32dp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="25dp"-->
+    <!--                    android:layout_height="25dp"-->
+    <!--                    android:src="@drawable/article_tab" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="@string/article_sketch"-->
+    <!--                    android:textColor="@color/colorGreen"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textStyle="bold" />-->
+
+    <!--            </LinearLayout>-->
 
 
-<!--                <EditText-->
-<!--                    android:id="@+id/input_article_CoverMap"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="100dp"-->
-<!--                    android:layout_centerVertical="true"-->
-<!--                    android:layout_marginLeft="25dp"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:layout_marginRight="25dp"-->
-<!--                    android:background="@drawable/txt_input"-->
-<!--                    android:gravity="top|left"-->
-<!--                    android:padding="8dp"-->
-<!--                    android:textSize="15sp"/>-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_title"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="15"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_title"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"-->
+    <!--                tools:ignore="DuplicateIds"/>-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/image_article_CoverMap"-->
-<!--                    android:layout_width="80dp"-->
-<!--                    android:layout_height="80dp"-->
-<!--                    android:layout_marginLeft="40dp"-->
-<!--                    android:layout_marginTop="20dp"-->
-<!--                    android:background="@drawable/txt_input_dot"-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_introduction"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="60dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="150"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_introduction"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"-->
+    <!--                tools:ignore="DuplicateIds"/>-->
 
-<!--                    android:src="@drawable/article_cover"-->
-<!--                    tools:ignore="MissingConstraints" />-->
+    <!--            <TextView-->
+    <!--                android:layout_width="360dp"-->
+    <!--                android:layout_height="20dp"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="@string/article_CoverMap"-->
+    <!--                android:textSize="15sp" />-->
 
-
-<!--            </FrameLayout>-->
-
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="15dp"-->
-<!--                android:layout_marginTop="32dp"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="25dp"-->
-<!--                    android:layout_height="25dp"-->
-<!--                    android:src="@drawable/article_tab" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/article_content"-->
-<!--                    android:textColor="@color/colorGreen"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold" />-->
-
-<!--            </LinearLayout>-->
+    <!--            <FrameLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent">-->
 
 
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_title_1"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="15"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_title_1"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"/>-->
+    <!--                <EditText-->
+    <!--                    android:id="@+id/input_article_CoverMap"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="100dp"-->
+    <!--                    android:layout_centerVertical="true"-->
+    <!--                    android:layout_marginLeft="25dp"-->
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:layout_marginRight="25dp"-->
+    <!--                    android:background="@drawable/txt_input"-->
+    <!--                    android:gravity="top|left"-->
+    <!--                    android:padding="8dp"-->
+    <!--                    android:textSize="15sp"/>-->
 
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_introduction_1"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="150"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_title_content_1"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"/>-->
+    <!--                <ImageButton-->
+    <!--                    android:id="@+id/image_article_CoverMap"-->
+    <!--                    android:layout_width="80dp"-->
+    <!--                    android:layout_height="80dp"-->
+    <!--                    android:layout_marginLeft="40dp"-->
+    <!--                    android:layout_marginTop="20dp"-->
+    <!--                    android:background="@drawable/txt_input_dot"-->
+
+    <!--                    android:src="@drawable/article_cover"-->
+    <!--                    tools:ignore="MissingConstraints" />-->
 
 
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_title_2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="15"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_title_2"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"/>-->
-
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_introduction_2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="150"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_title_content_2"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"/>-->
+    <!--            </FrameLayout>-->
 
 
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_title_3"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="15"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_title_3"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"/>-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="15dp"-->
+    <!--                android:layout_marginTop="32dp"-->
+    <!--                android:orientation="horizontal">-->
 
-<!--            <EditText-->
-<!--                android:id="@+id/input_article_introduction_3"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginRight="25dp"-->
-<!--                android:background="@drawable/txt_input"-->
-<!--                android:ems="150"-->
-<!--                android:gravity="top|left"-->
-<!--                android:hint="@string/article_title_content_3"-->
-<!--                android:padding="8dp"-->
-<!--                android:textSize="15sp"/>-->
+    <!--                <ImageView-->
+    <!--                    android:layout_width="25dp"-->
+    <!--                    android:layout_height="25dp"-->
+    <!--                    android:src="@drawable/article_tab" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="@string/article_content"-->
+    <!--                    android:textColor="@color/colorGreen"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textStyle="bold" />-->
+
+    <!--            </LinearLayout>-->
 
 
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_title_1"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="15"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_title_1"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"/>-->
 
-<!--                <Button-->
-<!--                    android:layout_width="200dp"-->
-<!--                    android:layout_height="45dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:layout_marginLeft="25dp"-->
-<!--                    android:layout_marginTop="20dp"-->
-<!--                    android:layout_marginRight="25dp"-->
-<!--                    android:background="@drawable/txt_tab_addcourse"-->
-<!--                    android:padding="8dp"-->
-<!--                    android:text="@string/article_button"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textSize="20dp"/>-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_introduction_1"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="60dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="150"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_title_content_1"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"/>-->
+
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_title_2"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="15"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_title_2"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"/>-->
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_introduction_2"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="60dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="150"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_title_content_2"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"/>-->
+
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_title_3"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="15"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_title_3"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"/>-->
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/input_article_introduction_3"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="60dp"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:layout_marginLeft="25dp"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginRight="25dp"-->
+    <!--                android:background="@drawable/txt_input"-->
+    <!--                android:ems="150"-->
+    <!--                android:gravity="top|left"-->
+    <!--                android:hint="@string/article_title_content_3"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:textSize="15sp"/>-->
 
 
 
+    <!--                <Button-->
+    <!--                    android:layout_width="200dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_marginLeft="25dp"-->
+    <!--                    android:layout_marginTop="20dp"-->
+    <!--                    android:layout_marginRight="25dp"-->
+    <!--                    android:background="@drawable/txt_tab_addcourse"-->
+    <!--                    android:padding="8dp"-->
+    <!--                    android:text="@string/article_button"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20dp"/>-->
 
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:background="@color/colorDGray"-->
-<!--                />-->
-
-<!--        </LinearLayout>-->
-
-<!--    </ScrollView>-->
 
 
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="130dp"-->
+    <!--                android:background="@color/colorDGray"-->
+    <!--                />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--    </ScrollView>-->
+
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
