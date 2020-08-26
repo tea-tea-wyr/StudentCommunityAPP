@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -53,6 +55,12 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 @Override
                 public void onClick(View v) {
                     Navigation.findNavController(v).navigate(R.id.action_navigation_user_to_modifyAvatarFragment);
+                }
+            });
+            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Navigation.findNavController(v).navigate(R.id.action_navigation_user_to_followFragment);
                 }
             });
             return holder;
@@ -104,6 +112,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         ImageView picture;
         TextView title;
         TextView content;
+        CardView cardView;
         public MyViewHolder(View itemView){
             super(itemView);
             imgurl = itemView.findViewById(R.id.user_items_imageurl);
@@ -112,17 +121,20 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             picture = itemView.findViewById(R.id.user_items_picture);
             title = itemView.findViewById(R.id.user_items_title);
             content = itemView.findViewById(R.id.user_items_content);
+            cardView = itemView.findViewById(R.id.user_items_card);
         }
     }
 
     class ZeroViewHolder extends RecyclerView.ViewHolder {
         ImageView setting;
         CircleImageView avatar;
+        LinearLayout linearLayout;
 
         public ZeroViewHolder(View itemView){
             super(itemView);
             setting = itemView.findViewById(R.id.user_header_setting);
             avatar = itemView.findViewById(R.id.user_header_avatar);
+            linearLayout = itemView.findViewById(R.id.user_header_follow);
         }
     }
 }

@@ -13,6 +13,18 @@
         <action
             android:id="@+id/action_navigation_home_to_articleFragment"
             app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_articleMoreFragment"
+            app:destination="@id/articleMoreFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_videoMoreFragment"
+            app:destination="@id/videoMoreFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_audioMoreFragment"
+            app:destination="@id/audioMoreFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -39,6 +51,9 @@
         <action
             android:id="@+id/action_navigation_user_to_followFragment"
             app:destination="@id/followFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_publish"
@@ -49,17 +64,23 @@
         android:id="@+id/articleFragment"
         android:name="com.example.studentcommunityapp.ui.article.ArticleFragment"
         android:label="article_fragment"
-        tools:layout="@layout/article_fragment" />
+        tools:layout="@layout/article_fragment" >
+        <action
+            android:id="@+id/action_articleFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <fragment
         android:id="@+id/followFragment"
         android:name="com.example.studentcommunityapp.ui.follow.FollowFragment"
         android:label="follow_fragment"
-        tools:layout="@layout/follow_fragment" />
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.studentcommunityapp.ui.loginaaaa.LoginFragment"
-        android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/follow_fragment" >
+        <action
+            android:id="@+id/action_followFragment_to_navigation_user"
+            app:destination="@id/navigation_user" />
+        <action
+            android:id="@+id/action_followFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addCourseFragment"
         android:name="com.example.studentcommunityapp.ui.course.addCourse.AddCourseFragment"
@@ -69,10 +90,185 @@
         android:id="@+id/settingFragment"
         android:name="com.example.studentcommunityapp.ui.settings.SettingFragment"
         android:label="setting_fragment"
-        tools:layout="@layout/setting_fragment" />
+        tools:layout="@layout/setting_fragment" >
+        <action
+            android:id="@+id/action_settingFragment_to_navigation_user"
+            app:destination="@id/navigation_user" />
+        <action
+            android:id="@+id/action_settingFragment_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_settingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/modifyAvatarFragment"
         android:name="com.example.studentcommunityapp.ui.modifyavatar.ModifyAvatarFragment"
         android:label="modify_avatar_fragment"
         tools:layout="@layout/modify_avatar_fragment" />
+    <fragment
+        android:id="@+id/articleMoreFragment"
+        android:name="com.example.studentcommunityapp.ui.more.ArticleMoreFragment"
+        android:label="ArticleMoreFragment" >
+        <action
+            android:id="@+id/action_articleMoreFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_articleMoreFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoMoreFragment"
+        android:name="com.example.studentcommunityapp.ui.more.VideoMoreFragment"
+        android:label="VideoMoreFragment" >
+        <action
+            android:id="@+id/action_videoMoreFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_videoMoreFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioMoreFragment"
+        android:name="com.example.studentcommunityapp.ui.more.AudioMoreFragment"
+        android:label="AudioMoreFragment" >
+        <action
+            android:id="@+id/action_audioMoreFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_audioMoreFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/account"
+        android:name="com.example.studentcommunityapp.ui.settings.account.Account"
+        android:label="account_fragment"
+        tools:layout="@layout/account_fragment" >
+        <action
+            android:id="@+id/action_account_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_account_to_classFragment"
+            app:destination="@id/classFragment" />
+        <action
+            android:id="@+id/action_account_to_collegeFragment"
+            app:destination="@id/collegeFragment" />
+        <action
+            android:id="@+id/action_account_to_emailFragment"
+            app:destination="@id/emailFragment" />
+        <action
+            android:id="@+id/action_account_to_nameFragment"
+            app:destination="@id/nameFragment" />
+        <action
+            android:id="@+id/action_account_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+        <action
+            android:id="@+id/action_account_to_phoneFragment"
+            app:destination="@id/phoneFragment" />
+        <action
+            android:id="@+id/action_account_to_universityFragment"
+            app:destination="@id/universityFragment" />
+        <action
+            android:id="@+id/action_account_to_wechatFragment"
+            app:destination="@id/wechatFragment" />
+        <action
+            android:id="@+id/action_account_to_yearFragment"
+            app:destination="@id/yearFragment" />
+        <action
+            android:id="@+id/action_account_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/classFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.Class.ClassFragment"
+        android:label="class_fragment"
+        tools:layout="@layout/class_fragment" >
+        <action
+            android:id="@+id/action_classFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/collegeFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.college.CollegeFragment"
+        android:label="college_fragment"
+        tools:layout="@layout/college_fragment" >
+        <action
+            android:id="@+id/action_collegeFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.email.EmailFragment"
+        android:label="email_fragment"
+        tools:layout="@layout/email_fragment" >
+        <action
+            android:id="@+id/action_emailFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.name.NameFragment"
+        android:label="name_fragment"
+        tools:layout="@layout/name_fragment" >
+        <action
+            android:id="@+id/action_nameFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.password.PasswordFragment"
+        android:label="password_fragment"
+        tools:layout="@layout/password_fragment" >
+        <action
+            android:id="@+id/action_passwordFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.phone.PhoneFragment"
+        android:label="phone_fragment"
+        tools:layout="@layout/phone_fragment" >
+        <action
+            android:id="@+id/action_phoneFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/universityFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.university.UniversityFragment"
+        android:label="university_fragment"
+        tools:layout="@layout/university_fragment" >
+        <action
+            android:id="@+id/action_universityFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/wechatFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.wechat.WechatFragment"
+        android:label="wechat_fragment"
+        tools:layout="@layout/wechat_fragment" >
+        <action
+            android:id="@+id/action_wechatFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/yearFragment"
+        android:name="com.example.studentcommunityapp.ui.settings.year.YearFragment"
+        android:label="year_fragment"
+        tools:layout="@layout/year_fragment" >
+        <action
+            android:id="@+id/action_yearFragment_to_account"
+            app:destination="@id/account" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.studentcommunityapp.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_user2"
+            app:destination="@id/navigation_user" />
+    </fragment>
 </navigation>
