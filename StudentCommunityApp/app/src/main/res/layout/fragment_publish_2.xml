@@ -159,7 +159,7 @@
             <EditText
                 android:id="@+id/input_vf_title_1"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="100dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
@@ -167,90 +167,13 @@
                 android:background="@drawable/txt_input"
                 android:ems="15"
                 android:gravity="top|left"
-                android:hint="@string/vf_title_1"
+                android:hint="@string/vf_title_content"
                 android:padding="8dp"
                 android:textSize="15sp"/>
-
-            <EditText
-                android:id="@+id/input_vf_introduction_1"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="150"
-                android:gravity="top|left"
-                android:hint="@string/vf_title_content_1"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-
-            <EditText
-                android:id="@+id/input_vf_title_2"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="15"
-                android:gravity="top|left"
-                android:hint="@string/vf_title_2"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-            <EditText
-                android:id="@+id/input_vf_introduction_2"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="150"
-                android:gravity="top|left"
-                android:hint="@string/vf_title_content_2"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-
-            <EditText
-                android:id="@+id/input_vf_title_3"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="15"
-                android:gravity="top|left"
-                android:hint="@string/vf_title_3"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
-            <EditText
-                android:id="@+id/input_vf_introduction_3"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/txt_input"
-                android:ems="150"
-                android:gravity="top|left"
-                android:hint="@string/vf_title_content_3"
-                android:padding="8dp"
-                android:textSize="15sp"/>
-
 
 
             <Button
+                android:id="@+id/vf_add_button"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
