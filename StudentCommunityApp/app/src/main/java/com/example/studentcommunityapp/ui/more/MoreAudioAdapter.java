@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Audio;
 import java.util.List;
@@ -48,8 +49,10 @@ public class MoreAudioAdapter extends RecyclerView.Adapter<MoreAudioAdapter.View
     @Override
     public void onBindViewHolder(MoreAudioAdapter.ViewHolder holder, int position) {
         Audio audio=mAudioList.get(position);
-        holder.Audioimage.setImageResource(audio.getAudio_imageID());
-        holder.Audioname.setText(audio.getAudio_name());
+        Glide.with(holder.itemView)
+                .load(audio.getAudio_picture())
+                .into(holder.Audioimage);
+        holder.Audioname.setText(audio.getAudio_title());
     }
 
     @Override

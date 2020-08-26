@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Audio;
 
@@ -18,12 +19,12 @@ public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.ViewHolder>{
     private List<Audio> mAudioList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView Audioimage;
-        TextView Audioname;
+        ImageView Audiopicture;
+        TextView Audiotitle;
         public ViewHolder(View itemView) {
             super(itemView);
-            Audioname=(TextView)itemView.findViewById(R.id.Audio_name);
-            Audioimage=(ImageView) itemView.findViewById(R.id.Audio_image);
+            Audiotitle=(TextView)itemView.findViewById(R.id.Audio_name);
+            Audiopicture=(ImageView) itemView.findViewById(R.id.Audio_image);
         }
     }
     public AudioAdapter(List<Audio> audioList){
@@ -36,7 +37,7 @@ public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.ViewHolder>{
         //将之前写好的list_view封装到一个View中
         AudioAdapter.ViewHolder holder=new AudioAdapter.ViewHolder(view);
 
-        holder.Audioimage.setOnClickListener(new View.OnClickListener() {
+        holder.Audiopicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_articleFragment);
@@ -48,8 +49,10 @@ public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(AudioAdapter.ViewHolder holder, int position) {
         Audio audio=mAudioList.get(position);
-        holder.Audioimage.setImageResource(audio.getAudio_imageID());
-        holder.Audioname.setText(audio.getAudio_name());
+        Glide.with(holder.itemView)
+                .load(audio.getAudio_picture())
+                .into(holder.Audiopicture);
+        holder.Audiotitle.setText(audio.getAudio_title());
     }
 
     @Override

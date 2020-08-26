@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Video;
 import java.util.List;
@@ -42,7 +44,9 @@ public class MoreVideoAdapter extends RecyclerView.Adapter<MoreVideoAdapter.View
     @Override
     public void onBindViewHolder(MoreVideoAdapter.ViewHolder holder, int position) {
         Video video=mVideoList.get(position);
-        holder.video_image.setImageResource(video.getVideo_imageID());
+        Glide.with(holder.itemView)
+                .load(video.getVideo_picture())
+                .into(holder.video_image);
 
     }
 
