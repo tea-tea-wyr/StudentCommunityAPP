@@ -13,7 +13,7 @@
         android:id="@+id/course_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationX="320dp"
+        android:translationX="300dp"
         android:translationY="20dp"
         android:clickable="true"
         android:src="@drawable/add_course"
@@ -31,6 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

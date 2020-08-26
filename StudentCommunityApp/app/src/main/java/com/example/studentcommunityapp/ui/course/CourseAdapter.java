@@ -36,14 +36,14 @@ public class CourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if(viewType ==0){
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_course_tab,parent,false);
-            return new ZeroViewHolder(v);
-
-
-//            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_course_show,parent,false);
-//            return new MyViewHolder(v);
-        }
+//        if(viewType ==0){
+//            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_course_tab,parent,false);
+//            return new ZeroViewHolder(v);
+//
+//
+////            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_course_show,parent,false);
+////            return new MyViewHolder(v);
+//        }
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_course_show,parent,false);
         return new MyViewHolder(v);
@@ -62,7 +62,7 @@ public class CourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 MyViewHolder myViewHolder = (MyViewHolder) holder;
                 Course course = mDataSet.get(position);
                 myViewHolder.week_course.setText(course.getWeek_course());
-//                myViewHolder.week_day.setText(course.getWeek_day());
+                myViewHolder.week_day.setText(course.getWeek_day());
                 myViewHolder.time.setText(course.getTime());
                 myViewHolder.place.setText(course.getPlace());
 //                Glide.with(myViewHolder.itemView)
@@ -89,15 +89,16 @@ public class CourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public int getItemCount() {
         return mDataSet.size();
     }
+
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView week_course;
-//        TextView week_day;
+        TextView week_day;
         TextView time;
         TextView place;
         public MyViewHolder(View itemView){
             super(itemView);
             week_course = itemView.findViewById(R.id.course_week_course);
-//            week_day = itemView.findViewById(R.id.course_week_day_tab);
+            week_day = itemView.findViewById(R.id.course_week_day);
             time = itemView.findViewById(R.id.course_week_time);
             place = itemView.findViewById(R.id.course_week_place);
         }

@@ -225,6 +225,7 @@
             android:layout_marginRight="20dp"/>
     </LinearLayout>
     <LinearLayout
+        android:clickable="true"
         android:id="@+id/l9"
         android:layout_width="match_parent"
         android:layout_height="50dp"
