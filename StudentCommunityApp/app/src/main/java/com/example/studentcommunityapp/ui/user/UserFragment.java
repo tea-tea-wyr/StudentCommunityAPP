@@ -58,14 +58,25 @@ public class UserFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         userViewModel =
                 ViewModelProviders.of(this).get(UserViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_user, container, false);
+        final View root = inflater.inflate(R.layout.fragment_user, container, false);
         getUserData(root);
-//        initData("http://81.70.27.208:8000/api/get_user_publish?op=1&userid=000002");
+        //initData("http://81.70.27.208:8000/api/get_user_publish?op=1&userid=000002");
         initData();
         mRecyclerView = root.findViewById(R.id.user_recyclerview);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
         mRecyclerView.setLayoutManager(layoutManager);
         userAdapter = new UserAdapter(mData);
+        userAdapter.setOnItemClickListener(new UserAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Navigation.findNavController(root).navigate(R.id.action_navigation_user_to_articleFragment);
+            }
+
+            @Override
+            public void onItemLongClick(View view, int position) {
+                Navigation.findNavController(root).navigate(R.id.action_navigation_user_to_articleFragment);
+            }
+        });
         mRecyclerView.setAdapter(userAdapter);
         return root;
     }
@@ -91,28 +102,29 @@ public class UserFragment extends Fragment {
                     String state = String.valueOf(jsonObject.get("status"));
                     if(state.equals("1")){
                         JSONArray jsonArray = new JSONArray(String.valueOf(jsonObject.getJSONObject("data").get("data")));
+                        mData = new ArrayList<>();
                         for (int i = 0; i<jsonArray.length();i++)
                         {
                             JSONObject object = (JSONObject) jsonArray.get(i);
                             showarticle = new Article(object);
                             mData.add(new Article(showarticle.getImgUrl(),showarticle.getName(),showarticle.getType(),showarticle.getTitle(),showarticle.getPicture(),showarticle.getContent()));
                         }
-//                        System.out.println(mData.size());
-//                        mData.clear();
-//                        mData.addAll(mData);
-//                        getActivity().runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                userAdapter.notifyDataSetChanged();
-//                            }
-//                        });
+                        System.out.println(mData.size());
+                        mData.clear();
+                        mData.addAll(mData);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                userAdapter.notifyDataSetChanged();
+                            }
+                        });
                     }
                     else {
                         Log.d(TAG, "null");
                     }
                 } catch (JSONException e){
                     Log.e(TAG, "onResponse_catch: ", e);
-//                    e.printStackTrace();
+                    e.printStackTrace();
                 }
 
             }
@@ -125,16 +137,25 @@ public class UserFragment extends Fragment {
 
 
     private void initData() {
-        String url = "http://81.70.27.208:8000/api/get_user_info?op=1&userid=000006";
         mData = new ArrayList<>();
-        for(int i=0; i<50; i++){
-            mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小西","发表了文章","C语言基础","http://world.people.com.cn/NMediaFile/2018/0913/MAIN201809131000000359718834615.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
-        }
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","如何学习计算机组成原理","http://81.70.27.208:8088/picture/j.jpg","《操作系统》是站在软件的角度看计算机的运行原理，《计算机组成原理》则是站在硬件的角度来看计算机的运行原理，"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","数据结构与算法学习笔记","http://81.70.27.208:8088/picture/010.jpg","数据结构指的是“一组数据的存储结构”，算法指的是“操作数据的一组方法"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","数据结构的抽象数据类型","http://81.70.27.208:8088/picture/g.jpg","数据结构主要是研究程序设计问题中计算机的操作对象以及它们之间的关系和操作的学科。"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","数据结构基本概念","http://81.70.27.208:8088/picture/g.jpg","数据，数据元素，数据项，数据对象，数据结构"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","数据结构的定义","http://81.70.27.208:8088/picture/009.jpg","数据结构是指数据元素的集合及元素间的相互关系和构造方法，元素之间的相互关系是数据的逻辑结构，数据元素及元素之间的存储称为存储结构。"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","对面向对象程序设计","http://81.70.27.208:8088/picture/i.jpg","java 本身是一种面向对象的程序设计语言，因此这三大特征对于学好java语言很重要"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了视频","小杰杰学习法","http://81.70.27.208:8088/picture/c10.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了视频","子噶教学","http://81.70.27.208:8088/picture/c8.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了音频","视频教学","http://81.70.27.208:8088/picture/c6.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了音频","子杰c语言教学","http://81.70.27.208:8088/picture/c2.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","小小杰口语","http://81.70.27.208:8088/picture/h8.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+        mData.add(new Article("http://81.70.27.208:8088/icon/car.jpg","小车","发表了文章","子杰听力课","http://81.70.27.208:8088/picture/h4.jpg","C语言是一种计算机程序设计语言，它既有高级语言的特点，又具有汇编......"));
+
     }
 
     public void getUserData(final View view) {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url("http://81.70.27.208:8000/api/get_user_info?op=1&userid=000006").build();
+        Request request = new Request.Builder().url("http://81.70.27.208:8000/api/get_user_info?op=1&userid=000002").build();
         Call call = client.newCall(request);
         call.enqueue(new Callback() {
             @Override

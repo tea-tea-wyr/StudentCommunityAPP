@@ -23,6 +23,7 @@ import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Article> mDataSet;
+    private UserAdapter .OnItemClickListener onItemClickListener;
     private final int type_zero =0;
     private final int type_one =1;
     private Context context;
@@ -70,12 +71,12 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         switch (holder.getItemViewType()){
             case type_zero:
                 break;
             default:
-                MyViewHolder myViewHolder = (MyViewHolder) holder;
+                final MyViewHolder myViewHolder = (MyViewHolder) holder;
                 Article article = mDataSet.get(position);
                 myViewHolder.name.setText(article.getName());
                 myViewHolder.type.setText(article.getType());
@@ -87,6 +88,27 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 Glide.with(myViewHolder.itemView)
                         .load(article.getPicture())
                         .into(myViewHolder.picture);
+                myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (onItemClickListener !=null){
+                            int pos = getRealPosition(myViewHolder);
+                            onItemClickListener.onItemClick(myViewHolder.cardView,pos);
+                        }
+                    }
+                });
+
+                myViewHolder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        if (onItemClickListener !=null){
+                            int pos = getRealPosition(myViewHolder);
+                            onItemClickListener.onItemClick(myViewHolder.cardView,pos);
+                        }
+                        return true;
+                    }
+                });
+
                 break;
         }
     }
@@ -136,5 +158,16 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             avatar = itemView.findViewById(R.id.user_header_avatar);
             linearLayout = itemView.findViewById(R.id.user_header_follow);
         }
+    }
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+        void onItemLongClick(View view, int position);
+    }
+    public void setOnItemClickListener(UserAdapter.OnItemClickListener listener){
+        this.onItemClickListener = listener;
+    }
+    private int getRealPosition(RecyclerView.ViewHolder holder){
+        int position = holder.getLayoutPosition();
+        return position;
     }
 }

@@ -61,7 +61,7 @@ public class LoginFragment extends Fragment {
                             if(islogin.equals("")){
                                 infos.edit().putString("user",names).apply();
                             }
-                            Navigation.findNavController(getView()).navigate(R.id.action_loginFragment_to_navigation_user2);
+                            Navigation.findNavController(getView()).navigate(R.id.action_loginFragment_to_navigation_home);
                         }
                     }
                 });
