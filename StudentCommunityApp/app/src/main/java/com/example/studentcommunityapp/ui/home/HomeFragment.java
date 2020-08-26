@@ -1,18 +1,20 @@
 package com.example.studentcommunityapp.ui.home;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,15 +25,32 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Audio;
 import com.example.studentcommunityapp.bean.Essay;
+import com.example.studentcommunityapp.bean.LoginState;
 import com.example.studentcommunityapp.bean.Video;
+import com.example.studentcommunityapp.service.loginstatemessage;
+import com.google.gson.Gson;
 
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+
+import static android.content.ContentValues.TAG;
+
 public class HomeFragment extends Fragment {
+    private AlertDialog.Builder builder;
+    private SharedPreferences Infos;
     private HomeViewModel homeViewModel;
     private ViewPager mViewPaper;
     private List<ImageView> images;
@@ -39,6 +58,18 @@ public class HomeFragment extends Fragment {
     private List<Essay> essay=new ArrayList<>();
     private List<Video> video=new ArrayList<>();
     private List<Audio> audio=new ArrayList<>();
+    private RecyclerView mRecyclerView1;
+    private RecyclerView mRecyclerView2;
+    private RecyclerView mRecyclerView3;
+    private Essay showEssay;
+    private ArrayList<Essay> essay_list=new ArrayList<>();
+    private EssayAdapter essayAdapter;
+    private Video showVideo;
+    private ArrayList<Video> video_list=new ArrayList<>();
+    private VideoAdapter videoAdapter;
+    private Audio showAudio;
+    private ArrayList<Audio> audio_list=new ArrayList<>();
+    private AudioAdapter audioAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.LayoutManager layoutManager1;
     private RecyclerView.LayoutManager layoutManager2;
@@ -57,7 +88,8 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        final View root = inflater.inflate(R.layout.fragment_home, container, false);
         final ImageView image=root.findViewById(R.id.imageView2);
         image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +110,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_audioMoreFragment);
+            }
+        });
+
+        final Button login = root.findViewById(R.id.home_login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(root).navigate(R.id.action_navigation_home_to_loginFragment);
             }
         });
 
@@ -126,33 +166,32 @@ public class HomeFragment extends Fragment {
         /**
          * 文章类的recyclerview
          */
-        initEssays();
-        RecyclerView recyclerView=root.findViewById(R.id.recycler);
+        initEssay("http://81.70.27.208:8000/api/get_part_data?op=article&max=3");
+        mRecyclerView1=root.findViewById(R.id.recycler);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-        recyclerView.setLayoutManager(layoutManager);
-        EssayAdapter adapter=new EssayAdapter(essay);
-        recyclerView.setAdapter(adapter);
+        mRecyclerView1.setLayoutManager(layoutManager);
+        essayAdapter=new EssayAdapter(essay);
+        mRecyclerView1.setAdapter(essayAdapter);
 
         /**
          * 视频类的recyclerview
          */
-        initVideos();
-        RecyclerView recyclerView1=root.findViewById(R.id.recycler1);
+        initVideo("http://81.70.27.208:8000/api/get_part_data?op=video&max=8");
+        mRecyclerView2=root.findViewById(R.id.recycler1);
         layoutManager1=new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
-        recyclerView1.setLayoutManager(layoutManager1);
-        VideoAdapter adapter1=new VideoAdapter(video);
-        recyclerView1.setAdapter(adapter1);
+        mRecyclerView2.setLayoutManager(layoutManager1);
+        videoAdapter=new VideoAdapter(video);
+        mRecyclerView2.setAdapter(videoAdapter);
 
         /**
          * 音频类的recyclerview
          */
-        initAudios();
-        RecyclerView recyclerView2=root.findViewById(R.id.recycler2);
+        initAudio("http://81.70.27.208:8000/api/get_part_data?op=audio&max=8");
+        mRecyclerView3=root.findViewById(R.id.recycler2);
         layoutManager2=new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
-        recyclerView2.setLayoutManager(layoutManager2);
-        AudioAdapter adapter2=new AudioAdapter(audio);
-        recyclerView2.setAdapter(adapter2);
-
+        mRecyclerView3.setLayoutManager(layoutManager2);
+        audioAdapter=new AudioAdapter(audio);
+        mRecyclerView3.setAdapter(audioAdapter);
         return root;
     }
 
@@ -236,54 +275,174 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    public void initEssays()
-    {
-        Essay essay1 = new Essay(R.drawable.aaa, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的......");
-        essay.add(essay1);
-        Essay essay2 = new Essay(R.drawable.bbb, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的......");
-        essay.add(essay2);
-        Essay essay3 = new Essay(R.drawable.cccc, "编译原理知识点总结","编译原理是计算机专业的一门重要专业课，旨在介绍编译程序构造的编译原理是计算机专业的......");
-        essay.add(essay3);
-
+    public void GetLoginState(loginstatemessage msg) {
+        String res = msg.res;
+        Gson gson = new Gson();
+        LoginState state = gson.fromJson(res, LoginState.class);
+        Boolean islogin = state.getData().getIs_login();
+        System.out.println("登录状态" + state.getData().getIs_login());/**/
+        if (!islogin) {
+            Infos.edit().putString("user", "").apply();//首次启动
+            builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("请先登录");// 设置标题
+            builder.setCancelable(false);
+            // 为对话框设置取消按钮
+            builder.setPositiveButton("去登录", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    Navigation.findNavController(getView()).navigate(R.id.action_navigation_home_to_loginFragment);
+                }
+            });
+            Looper.prepare();
+            builder.create().show();// 使用show()方法   显示对话框
+            Looper.loop();
+        }
     }
 
-    public void initVideos()
-    {
-        Video video1 = new Video(R.drawable.d);
-        video.add(video1);
-        Video video2 = new Video(R.drawable.k);
-        video.add(video2);
-        Video video3 = new Video(R.drawable.p);
-        video.add(video3);
-        Video video4 = new Video(R.drawable.q);
-        video.add(video4);
-        Video video5 = new Video(R.drawable.r);
-        video.add(video5);
-        Video video6 = new Video(R.drawable.t);
-        video.add(video6);
-        Video video7 = new Video(R.drawable.v);
-        video.add(video7);
-        Video video8 = new Video(R.drawable.w);
-        video.add(video8);
+    public void initEssay(String url) {
+        OkHttpClient client = new OkHttpClient();
+        final Request request = new Request.Builder()
+                .url(url)//要访问的链接
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d(TAG, "onFailure: ");
+            }
+            @Override
+            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+
+                String res = response.body().string();
+                Log.d(TAG, "onResponse: " + res);
+                try {
+                    JSONObject jsonObject = new JSONObject(res);
+                    String state = String.valueOf(jsonObject.get("status"));
+                    if(state.equals("1")){
+                        JSONArray jsonArray = new JSONArray(String.valueOf(jsonObject.getJSONObject("data").get("data_info")));
+                        Log.d(TAG,"获取数据"+jsonArray);
+                        for (int i = 0; i<jsonArray.length();i++)
+                        {
+                            JSONObject object = (JSONObject) jsonArray.get(i);
+                            showEssay= new Essay(object);
+                            essay_list.add(new Essay(showEssay.getEssay_ID(),showEssay.getPicture(),showEssay.getEssay_title(),showEssay.getEssay_description()));
+                        }
+                        System.out.println(essay_list.size());
+                        essay.clear();
+                        essay.addAll(essay_list);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                essayAdapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                    else {
+                        Log.d(TAG, "null");
+                    }
+                } catch (JSONException e){
+                    Log.e(TAG, "onResponse_catch: ", e);
+//                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
-    public void initAudios()
-    {
-        Audio audio1 = new Audio(R.drawable.w,"java入门");
-        audio.add(audio1);
-        Audio audio2 = new Audio(R.drawable.v,"C#入门");
-        audio.add(audio2);
-        Audio audio3 = new Audio(R.drawable.r,"C++从入门到精通");
-        audio.add(audio3);
-        Audio audio4 = new Audio(R.drawable.q,"编译原理");
-        audio.add(audio4);
-        Audio audio5 = new Audio(R.drawable.p,"数据结构");
-        audio.add(audio5);
-        Audio audio6 = new Audio(R.drawable.t,"计算机网络");
-        audio.add(audio6);
-        Audio audio7 = new Audio(R.drawable.k,"计算机组成原理");
-        audio.add(audio7);
-        Audio audio8 = new Audio(R.drawable.d,"操作系统");
-        audio.add(audio8);
+    public void initVideo(String url) {
+        OkHttpClient client = new OkHttpClient();
+        final Request request = new Request.Builder()
+                .url(url)//要访问的链接
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d(TAG, "onFailure: ");
+            }
+            @Override
+            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+
+                String res = response.body().string();
+                Log.d(TAG, "onResponse: " + res);
+                try {
+                    JSONObject jsonObject = new JSONObject(res);
+                    String state = String.valueOf(jsonObject.get("status"));
+                    if(state.equals("1")){
+                        JSONArray jsonArray = new JSONArray(String.valueOf(jsonObject.getJSONObject("data").get("data_info")));
+                        for (int i = 0; i<jsonArray.length();i++)
+                        {
+                            JSONObject object = (JSONObject) jsonArray.get(i);
+                            showVideo= new Video(object);
+                            video_list.add(new Video(showVideo.getVideo_picture(),showVideo.getVideo_ID()));
+                        }
+                        System.out.println(video_list.size());
+                        video.clear();
+                        video.addAll(video_list);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                videoAdapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                    else {
+                        Log.d(TAG, "null");
+                    }
+                } catch (JSONException e){
+                    Log.e(TAG, "onResponse_catch: ", e);
+//                    e.printStackTrace();
+                }
+
+            }
+        });
+    }
+
+    public void initAudio(String url) {
+        OkHttpClient client = new OkHttpClient();
+        final Request request = new Request.Builder()
+                .url(url)//要访问的链接
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d(TAG, "onFailure: ");
+            }
+            @Override
+            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+
+                String res = response.body().string();
+                Log.d(TAG, "onResponse: " + res);
+                try {
+                    JSONObject jsonObject = new JSONObject(res);
+                    String state = String.valueOf(jsonObject.get("status"));
+                    if(state.equals("1")){
+                        JSONArray jsonArray = new JSONArray(String.valueOf(jsonObject.getJSONObject("data").get("data_info")));
+                        for (int i = 0; i<jsonArray.length();i++)
+                        {
+                            JSONObject object = (JSONObject) jsonArray.get(i);
+                            showAudio= new Audio(object);
+                            audio_list.add(new Audio(showAudio.getAudio_ID(),showAudio.getAudio_picture(),showAudio.getAudio_title()));
+                        }
+                        System.out.println(audio_list.size());
+                        audio.clear();
+                        audio.addAll(audio_list);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                audioAdapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                    else {
+                        Log.d(TAG, "null");
+                    }
+                } catch (JSONException e){
+                    Log.e(TAG, "onResponse_catch: ", e);
+//                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

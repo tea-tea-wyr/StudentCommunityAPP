@@ -1,5 +1,8 @@
 package com.example.studentcommunityapp.bean;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Course {
     private String week_course; //课程
     private String week_day; //周几
@@ -15,6 +18,14 @@ public class Course {
         this.place = place;
 
     }
+
+    public Course(JSONObject object) throws JSONException {
+        this.week_course = object.optString("name", "");
+        this.week_day = object.optString("time", "");
+        this.time = object.optString("number", "");
+        this.place = object.optString("place", "");
+    }
+
 
     public String getWeek_course() {
         return week_course;

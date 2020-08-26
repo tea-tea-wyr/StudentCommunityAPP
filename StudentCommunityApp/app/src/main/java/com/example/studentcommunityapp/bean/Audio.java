@@ -1,23 +1,36 @@
 package com.example.studentcommunityapp.bean;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Audio {
-    private int Audio_imageID;
-    private String Audio_name;
+    private String Audio_ID;
+    private String Audio_picture;
+    private String Audio_title;
 
-    public Audio(int Audio_imageID,String Audio_name)
+    public Audio(JSONObject object) throws JSONException
     {
-        this.Audio_imageID=Audio_imageID;
-        this.Audio_name=Audio_name;
+        this.Audio_ID=object.optString("dataid","");
+        this.Audio_picture=object.optString("picture","");
+        this.Audio_title=object.optString("title","");
     }
 
-    public int getAudio_imageID()
+    public Audio(String Audio_ID,String Audio_picture,String Audio_title)
     {
-        return Audio_imageID;
+        this.Audio_ID=Audio_ID;
+        this.Audio_picture=Audio_picture;
+        this.Audio_title=Audio_title;
+    }
+    public String getAudio_ID() {return Audio_ID;}
+
+    public String getAudio_picture()
+    {
+        return Audio_picture;
     }
 
-    public String getAudio_name()
+    public String getAudio_title()
     {
-        return Audio_name;
+        return Audio_title;
     }
 }
 

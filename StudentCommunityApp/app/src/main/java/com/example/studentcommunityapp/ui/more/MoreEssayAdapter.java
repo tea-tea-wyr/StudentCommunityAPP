@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Essay;
 
@@ -58,8 +59,10 @@ public class MoreEssayAdapter extends RecyclerView.Adapter<MoreEssayAdapter.View
     @Override
     public void onBindViewHolder(MoreEssayAdapter.ViewHolder holder, int position) {
         Essay essay=mEssayList.get(position);
-        holder.Essayimage.setImageResource(essay.getEssay_imageID());
-        holder.Essayname.setText(essay.getEssay_name());
+        Glide.with(holder.itemView)
+                .load(essay.getPicture())
+                .into(holder.Essayimage);
+        holder.Essayname.setText(essay.getEssay_title());
         holder.Essaydescription.setText(essay.getEssay_description());
     }
 

@@ -1,5 +1,7 @@
 package com.example.studentcommunityapp.bean;
 
+import org.json.JSONObject;
+
 public class Article {
     private String imgUrl; //头像
     private String name; //用户昵称
@@ -9,6 +11,15 @@ public class Article {
     private String content; //文章内容
 
     public Article(){}
+    public Article(JSONObject object) {
+        this.imgUrl = object.optString("imgUrl","");
+        this.name = object.optString("name","");
+        this.type = object.optString("type","");
+        this.title = object.optString("title","");
+        this.picture = object.optString("picture","");
+        this.content = object.optString("introduction","");
+    }
+
     public Article(String imgUrl, String name, String type, String title, String picture, String content) {
         this.imgUrl = imgUrl;
         this.name = name;
