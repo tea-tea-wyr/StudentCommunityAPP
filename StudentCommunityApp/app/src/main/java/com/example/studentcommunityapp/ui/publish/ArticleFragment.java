@@ -10,13 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.studentcommunityapp.R;
+import com.example.studentcommunityapp.ui.course.addCourse.AddCourseViewModel;
 import com.example.studentcommunityapp.util.WebHelper;
 import com.google.gson.Gson;
 
@@ -34,7 +37,7 @@ import okhttp3.Response;
 
 public class ArticleFragment extends Fragment {
 
-    private View rootView;
+    private View view;
 
 
 
@@ -96,78 +99,116 @@ public class ArticleFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         View rootView = inflater.inflate(R.layout.fragment_publish_0, container, false);
+         View view = inflater.inflate(R.layout.fragment_publish_0, container, false);
 
 
 
-        submit=rootView.findViewById(R.id.article_add_button);
+        //课程名称
+        final EditText edtMsg1 = (EditText)view.findViewById(R.id.input_article_title);
+        //周几
+        final EditText edtMsg2 = (EditText)view.findViewById(R.id.input_article_introduction);
+        //课程时间
+        final EditText edtMsg3 = (EditText)view.findViewById(R.id.input_article_CoverMap);
+        //课程地点
+        final EditText edtMsg4 = (EditText)view.findViewById(R.id.input_article_title_1);
+
+        submit=view.findViewById(R.id.article_add_button);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Message message=new Message();
-                            message.what=100;
-                            message.obj="1111";
-                handler.sendMessage(message);
+                if(edtMsg1.getText().toString().equals("")){
+                    Toast.makeText(getContext(),"请输入标题再提交",Toast.LENGTH_SHORT).show();
+                }
+                else if(edtMsg2.getText().toString().equals("")){
+                    Toast.makeText(getContext(),"请输入简介再提交",Toast.LENGTH_SHORT).show();
+                }
+                else if(edtMsg3.getText().toString().equals("")){
+                    Toast.makeText(getContext(),"请输入上传资料再提交",Toast.LENGTH_SHORT).show();
+                }
+                else if(edtMsg4.getText().toString().equals("")){
+                    Toast.makeText(getContext(),"请输入具体内容再提交",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    String postMessage1;
+                    String postMessage2;
+                    String postMessage3;
+                    String postMessage4;
+                    postMessage1=edtMsg1.getText().toString();
+                    postMessage2=edtMsg2.getText().toString();
+                    postMessage3=edtMsg3.getText().toString();
+                    postMessage4=edtMsg4.getText().toString();
 
-//                    String postMessage1;
-//                    String postMessage2;
-//                    String postMessage3;
-//                    String postMessage4;
-//                    postMessage1=edtMsg1.getText().toString();
-//                    postMessage2=edtMsg2.getText().toString();
-//                    postMessage3=edtMsg3.getText().toString();
-//                    postMessage4=edtMsg4.getText().toString();
+                    Log.d("getComment","postmessage: "+postMessage1);
+                    final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+                    final OkHttpClient client = new OkHttpClient();
+                    final String url="http://81.70.27.208:8000/api/string_publish";
+                    HashMap<String,String> map=new HashMap<>();
+                    map.put("title",postMessage1);
+                    map.put("introduction",postMessage2);
+                    map.put("picture",postMessage3);
+                    map.put("content",postMessage4);
 
-//                    Log.d("getComment","postmessage: "+postMessage1);
-//                final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-//                final OkHttpClient client = new OkHttpClient();
-//                final String url="http://81.70.27.208:8000/api/set_classtable";
-//                HashMap<String,String> map=new HashMap<>();
-//                    map.put("name",postMessage1);
-//                    map.put("time",postMessage2);
-//                    map.put("number",postMessage3);
-//                    map.put("place",postMessage4);
-
-//                final String cookie;
-//                cookie= WebHelper.getCookie(getActivity());
-//                Gson gson=new Gson();
-//                final String data=gson.toJson(map);
-//                new Thread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        try {
-//                            Log.d("PostComment","in");
-//                            RequestBody body = RequestBody.create(JSON,data);
-//                            Request request = new Request.Builder()
-//                                    .url(url)
-//                                    .header("cookie",cookie)
-//                                    .post(body)
-//                                    .build();
-//                            Response response = client.newCall(request).execute();
-//                            String response_string=response.body().string();
-//                            JSONObject jsonObject_data = new JSONObject(response_string);
-//                            String status=jsonObject_data.getString("status");
-//                            Log.d("PostComment",status);
-//                            Message message=new Message();
-//                            message.what=100;
-//                            message.obj=status;
-//                            handler.sendMessage(message);
-//                        }
-//                        catch (IOException e){
-//                            Log.d("PostComment",e.toString());
-//                        }
-//                        catch (JSONException e){
-//                            Log.d("PostComment",e.toString());
-//                        }
-//                    }
-//                }).start();
+                    final String cookie;
+                    cookie= WebHelper.getCookie(getActivity());
+                    Gson gson=new Gson();
+                    final String data=gson.toJson(map);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                Log.d("PostComment","in");
+                                RequestBody body = RequestBody.create(JSON,data);
+                                Request request = new Request.Builder()
+                                        .url(url)
+                                        .header("cookie",cookie)
+                                        .post(body)
+                                        .build();
+                                Response response = client.newCall(request).execute();
+                                String response_string=response.body().string();
+                                JSONObject jsonObject_data = new JSONObject(response_string);
+                                String status=jsonObject_data.getString("status");
+                                Log.d("PostComment",status);
+                                Message message=new Message();
+                                message.what=100;
+                                message.obj=status;
+                                handler.sendMessage(message);
+                            }
+                            catch (IOException e){
+                                Log.d("PostComment",e.toString());
+                            }
+                            catch (JSONException e){
+                                Log.d("PostComment",e.toString());
+                            }
+                        }
+                    }).start();
 
 
+                }
             }
-
         });
 
+//        submit=view.findViewById(R.id.article_add_button);
+//        submit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Message message=new Message();
+//                message.what=100;
+//                message.obj="1111";
+//                handler.sendMessage(message);
+//
+//            }
+//
+//        });
 
-        return rootView;
+
+
+
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
     }
 }
