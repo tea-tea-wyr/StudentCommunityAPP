@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -22,6 +23,7 @@ import java.util.List;
 public class FollowAdapter extends RecyclerView.Adapter<FollowAdapter.ViewHolder> {
         private Context context;
         private List<Article> mdataset;
+        private FollowAdapter .OnItemClickListener onItemClickListener;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         CircleImageView imgurl;
@@ -30,6 +32,7 @@ public class FollowAdapter extends RecyclerView.Adapter<FollowAdapter.ViewHolder
         ImageView picture;
         TextView title;
         TextView content;
+        CardView cardView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgurl = itemView.findViewById(R.id.follow_items_imageurl);
@@ -38,6 +41,7 @@ public class FollowAdapter extends RecyclerView.Adapter<FollowAdapter.ViewHolder
             picture = itemView.findViewById(R.id.follow_items_picture);
             title = itemView.findViewById(R.id.follow_items_title);
             content = itemView.findViewById(R.id.follow_items_content);
+            cardView = itemView.findViewById(R.id.follow_card);
         }
     }
     public FollowAdapter(List<Article> data){
@@ -54,7 +58,7 @@ public class FollowAdapter extends RecyclerView.Adapter<FollowAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ViewHolder myViewHolder = (ViewHolder) holder;
+        final ViewHolder myViewHolder = (ViewHolder) holder;
         Article article = mdataset.get(position);
         myViewHolder.name.setText(article.getName());
         myViewHolder.type.setText(article.getType());
@@ -66,6 +70,25 @@ public class FollowAdapter extends RecyclerView.Adapter<FollowAdapter.ViewHolder
         Glide.with(myViewHolder.itemView)
                 .load(article.getPicture())
                 .into(myViewHolder.picture);
+        myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener !=null){
+                    int pos = getRealPosition(myViewHolder);
+                    onItemClickListener.onItemClick(myViewHolder.cardView,pos);
+                }
+            }
+        });
+        myViewHolder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (onItemClickListener !=null){
+                    int pos = getRealPosition(myViewHolder);
+                    onItemClickListener.onItemClick(myViewHolder.cardView,pos);
+                }
+                return true;
+            }
+        });
     }
 
     @Override
@@ -73,5 +96,15 @@ public class FollowAdapter extends RecyclerView.Adapter<FollowAdapter.ViewHolder
         return mdataset.size();
     }
 
-
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+        void onItemLongClick(View view, int position);
+    }
+    public void setOnItemClickListener(FollowAdapter.OnItemClickListener listener){
+        this.onItemClickListener = listener;
+    }
+    private int getRealPosition(RecyclerView.ViewHolder holder){
+        int position = holder.getLayoutPosition();
+        return position;
+    }
 }

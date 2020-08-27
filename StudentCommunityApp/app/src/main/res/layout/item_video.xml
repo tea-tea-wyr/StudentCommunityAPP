@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/MoreVideoimage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="5dp"/>
 
 </LinearLayout>

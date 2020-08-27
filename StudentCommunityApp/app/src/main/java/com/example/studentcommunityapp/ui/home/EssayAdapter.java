@@ -5,13 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.bumptech.glide.Glide;
 import com.example.studentcommunityapp.R;
 import com.example.studentcommunityapp.bean.Essay;
-
 import java.util.List;
 
 public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.ViewHolder>{
@@ -19,15 +17,15 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.ViewHolder>{
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         View EssayView;
-        ImageView Essayimage;
-        TextView Essayname;
+        ImageView Essaypicture;
+        TextView Essaytitle;
         TextView Essaydescription;
         public ViewHolder(View itemView) {
             super(itemView);
             EssayView=itemView;
-            Essayname=(TextView)itemView.findViewById(R.id.Essay_name);
-            Essaydescription=(TextView)itemView.findViewById(R.id.Essay_description);
-            Essayimage=(ImageView) itemView.findViewById(R.id.Essay_image);
+            Essaytitle=itemView.findViewById(R.id.Essay_name);
+            Essaydescription=itemView.findViewById(R.id.Essay_description);
+            Essaypicture=itemView.findViewById(R.id.Essay_image);
         }
     }
     public EssayAdapter(List<Essay> essayList){
@@ -46,7 +44,7 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.ViewHolder>{
             }
         });
 
-        holder.Essayimage.setOnClickListener(new View.OnClickListener() {
+        holder.Essaypicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_articleFragment);
@@ -58,8 +56,10 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Essay essay=mEssayList.get(position);
-        holder.Essayimage.setImageResource(essay.getEssay_imageID());
-        holder.Essayname.setText(essay.getEssay_name());
+        Glide.with(holder.itemView)
+                .load(essay.getPicture())
+                .into(holder.Essaypicture);
+        holder.Essaytitle.setText(essay.getEssay_title());
         holder.Essaydescription.setText(essay.getEssay_description());
     }
 
