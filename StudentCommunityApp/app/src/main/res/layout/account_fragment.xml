@@ -55,14 +55,15 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:textColor="#000000"/>
+
         <TextView
             android:id="@+id/account_name"
-            android:layout_width="wrap_content"
+            android:layout_width="29dp"
             android:layout_height="wrap_content"
-            android:text="小西"
-            android:textSize="20sp"
+            android:layout_gravity="center"
             android:layout_marginRight="5dp"
-            android:layout_gravity="center"/>
+            android:text="小车"
+            android:textSize="20sp" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,7 +124,7 @@
             android:id="@+id/account_school"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="未设置"
+            android:text="北京化工大学"
             android:textSize="20sp"
             android:layout_marginRight="5dp"
             android:layout_gravity="center"/>
@@ -155,7 +156,7 @@
             android:id="@+id/account_college"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="未设置"
+            android:text="信息学院"
             android:textSize="20sp"
             android:layout_marginRight="5dp"
             android:layout_gravity="center"/>
@@ -187,7 +188,7 @@
             android:id="@+id/account_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="未设置"
+            android:text="计科1703"
             android:textSize="20sp"
             android:layout_marginRight="5dp"
             android:layout_gravity="center"/>
@@ -219,7 +220,7 @@
             android:id="@+id/account_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="未设置"
+            android:text="2017"
             android:textSize="20sp"
             android:layout_marginRight="5dp"
             android:layout_gravity="center"/>
